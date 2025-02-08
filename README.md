@@ -59,7 +59,7 @@ This project integrates:
 ## Roadmap
 
 ### Planned Improvements:
-- Use LoRa communication, implemented with my fellow group members, to transmit the data 
+- Use LoRa communication, implemented with my fellow group members, to transmit the data.
 - Implement additional features to the android app and improve it.
 - Integrate a database to log measurements.
 
