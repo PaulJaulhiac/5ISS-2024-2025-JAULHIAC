@@ -59,8 +59,8 @@ This project integrates:
 ## Roadmap
 
 ### Planned Improvements:
-- Use LoRa communication to transmit the data 
-- Add a sound alert for critical thresholds.
+- Use LoRa communication, implemented with my fellow group members, to transmit the data 
+- Implement additional features to the android app and improve it.
 - Integrate a database to log measurements.
 
 ---
