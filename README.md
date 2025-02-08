@@ -4,96 +4,70 @@ This repository contains work I conducted as a part of the courses around the fa
 
 ## Description
 
-Ce projet intègre :
-1. **Un capteur de gaz (WS2024)** pour mesurer des gaz tels que l'ammoniac (NH3), le dioxyde d'azote (NO2) et l'éthanol (C2H6O).
-2. **Une application mobile** pour le contrôle et l'affichage, utilisant une connexion Bluetooth vers un microcontrôleur.
-3. **Un système Arduino** pour gérer la capture des données du capteur, leur traitement et leur communication avec l'application mobile.
+This project integrates:
+1. **Datasheet for a gas sensor** to measure gases like Ammonia (NH3), Nitrogen Dioxide (NO2), and Ethanol (C2H6O).
+2. **A mobile application** for control and display, using a Bluetooth connection to a microcontroller (ESP32).
+3. **An Arduino system**, on an ESP32 board to manage sensor data by processing and allowing communication with the mobile app.
 
-### Objectifs :
-- Suivre les concentrations de gaz et déclencher des alertes si nécessaire.
-- Contrôler des fonctionnalités à distance (comme allumer/éteindre une LED).
-- Intégrer des commandes vocales pour faciliter l'interaction.
-
----
-
-## 📂 Structure du Projet
-
-- **Fichiers de Code :**
-  - `BT_App.ino` : Contrôle Bluetooth pour Arduino.
-  - `Gas_Sensor-OLED_Screen-W.ino` : Gestion du capteur de gaz avec affichage OLED.
-  - `BTcodeArduino.ino` : Échange Bluetooth entre l'Arduino et l'application mobile.
-- **Images et Schémas :**
-  - `HomeScreenApp.png` et `MainControlScreenApp.png` : Aperçus de l'application mobile.
-  - `Screen1BlockDiagram.png` et `Screen2BlockDiagram.png` : Diagrammes des blocs de l'application.
-- **Documentation Technique :**
-  - Rapport complet sur la simulation et la conception : `Rapport Elec Gas sensor - JAULHIAC.pdf`.
-  - Datasheet du capteur : `JUMIN_JAULHIAC_GAUCHE_MARIN-MULLER_BOUJON_Datasheet_AIME.pdf`.
+### Objectives of the project:
+- Make a nano-particles based gas sensor in lab.
+- Implement an adaptation system for a PCB, to recover measurements from the sensor.
+- Monitor gas concentrations and trigger alerts when necessary, from a µC.
+- Remotely control features via the app.
 
 ---
 
-## Fonctionnalités
+## 📂 Project Structure
 
-### 🌫️ Détection de gaz :
-- Capteur WS2024 avec nanoparticules de trioxide de tungstène.
-- Détection précise et faible consommation d'énergie.
-
-### 📱 Application mobile :
-- **Écran 1** : Page d'accueil avec accès au centre de contrôle.
-- **Écran 2** : Contrôle Bluetooth :
-  - Boutons pour allumer/éteindre une LED.
-  - Commandes vocales pour exécuter des actions.
-  - Réception des données du capteur en temps réel.
-
-### Communication Bluetooth :
-- Connexion entre l'application et un Arduino pour les commandes et le retour d'informations.
+- **/software:**
+  - `BT_App.ino`: Bluetooth communication between Arduino and the mobile app.
+  - `Gas_Sensor-OLED_Screen-W.ino`: Gas sensor data processing with OLED display.
+- **/appinventor:**
+  - `HomeScreenApp.png` and `MainControlScreenApp.png`: Mobile app previews.
+  - `Screen1BlockDiagram.png` and `Screen2BlockDiagram.png`: Application block diagrams for the code behind the app's UI.
+- **/hardware:**
+  - Full report on simulation and design: `Rapport Elec Gas sensor - JAULHIAC.pdf`.
+  - Spice simulations: `./hardware/gas sensor simu`
+- **/datasheet:**
+  - Sensor datasheet: `JUMIN_JAULHIAC_GAUCHE_MARIN-MULLER_BOUJON_Datasheet_AIME.pdf`.
 
 ---
 
-## Installation et Utilisation
+## Installation and Usage
 
-### 🔹 Matériel requis :
-- Capteur WS2024.
-- Microcontrôleur Arduino (ou équivalent).
-- Module Bluetooth HC-05 ou HC-06.
-- Smartphone Android avec l'application installée.
+### 🔹 Required Hardware:
+- WS2024 gas sensor.
+- Arduino microcontroller (ESP32 or equivalent, might imply code adaptating).
+- Bluetooth module.
+- Android smartphone with the MITappinventor app installed.
 
-### 🔹 Installation du code :
-1. **Arduino** :
-   - Téléverse les fichiers `.ino` dans l'Arduino via l'IDE.
-   - Connecte le capteur et le module Bluetooth selon le schéma fourni.
-2. **Application mobile** :
-   - Installe l'APK générée pour Android.
-   - Active le Bluetooth et connecte l'application au microcontrôleur.
+### 🔹 Code Installation:
+1. **Arduino:**
+   - Upload the `.ino` files to the Arduino using the IDE.
+   - Connect the sensor and Bluetooth module following the provided schematic.
+2. **Mobile Application:**
+   - Install the generated APK for Android.
+   - Enable Bluetooth and connect the app to the µC.
 
-### 🔹 Utilisation :
-- Lance l'application mobile.
-- Connecte-toi au module Bluetooth.
-- Utilise les boutons ou la commande vocale pour interagir.
-
----
-
-## Simulation et Analyse
-
-- **Simulation LTSpice** : Réalisée pour valider les performances du système.
-- **Filtrage et amplification** :
-  - Gain du signal faible : 100x, conforme aux attentes.
-  - Réduction du bruit 50 Hz via filtres passe-bas.
-- **Réponse fréquentielle et temporelle** : Optimisée pour les signaux faibles du capteur.
+### 🔹 Usage:
+- Launch the mobile app.
+- Connect to the Bluetooth module.
+- Use buttons or voice commands to interact.
 
 ---
 
 ## Roadmap
 
-### Améliorations envisagées :
-- Ajout d'une alerte sonore pour des seuils critiques.
-- Intégration d'une base de données pour historiser les mesures.
-- Portage de l'application vers iOS.
+### Planned Improvements:
+- Use LoRa communication to transmit the data 
+- Add a sound alert for critical thresholds.
+- Integrate a database to log measurements.
 
 ---
 
 ## Contact information
 
-For any questions or suggestions regarding this project, feel free to contact me:
+For more information or any question about this project, please, do not hesitate to contact me:
 
 - **Name:** Paul JAULHIAC
 - **Email:** jaulhiac@insa-toulouse.fr
